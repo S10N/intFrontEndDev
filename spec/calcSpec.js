@@ -7,8 +7,10 @@ describe("Calculator", function() {
         it("should return 26", function() {
             expect(addition(7, 19)).toBe(26);
             });
-            it("should return an error if we don't supply two numbers", function() {
-            expect(addition("hitchhikers", "Guide")).toBe ("Error!");
+            it("Should return an error if we don't supply two numbers", function() {
+            SpyOn(window, "alert");
+            addition("Hitchhikers", "Guide");
+            expect(window.alert).toHaveBeenCalledWith ("Error!");
+            });
         });
-    });
 });
