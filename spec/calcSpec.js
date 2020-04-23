@@ -1,12 +1,13 @@
-
 describe("Calculator", function() {
 
-    var calc = new Calculator;
+    beforeEach(function() {
+        calc = new Calculator;
+    });
 
     describe("Addition function", function() {
         it("should return 42", function() {
             calc.add(20);
-            calc.add(22)
+            calc.add(22);
             expect(calc.value).toBe(42);
         });
 
@@ -18,7 +19,7 @@ describe("Calculator", function() {
 
         it("should return an error if we don't supply two numbers", function() {
             spyOn(window, "alert");
-            calc.add("Hitchhikers", "Guide")
+            calc.add("Hitchhikers");
             expect(window.alert).toHaveBeenCalledWith("Error!");
         });
     });
